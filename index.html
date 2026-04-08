@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Article on personal responsibility for climate change: analysis of industry, transport, consumption and waste">
+  <title>Personal Responsibility and Climate Change</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a192f;
+      --card: #13294b;
+      --text: #e6f1ff;
+      --accent: #64ffda;
+      --red: #ff6b6b;
+      --green: #51cf66;
+    }
+    
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    header {
+      background: linear-gradient(to bottom, #0a192f, #112240);
+      padding: 160px 20px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(100,255,218,0.08), transparent 60%);
+      z-index: 0;
+    }
+    
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+    
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      margin-bottom: 0.6em;
+      color: white;
+      line-height: 1.1;
+    }
+    
+    .subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      color: var(--accent);
+      max-width: 900px;
+      margin: 0 auto 1.5em;
+      line-height: 1.45;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    
+    section {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 45px 40px;
+      margin-bottom: 45px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.55);
+      border-left: 6px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-5px);
+    }
+    
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 1.3em;
+      border-bottom: 2px solid rgba(100,255,218,0.2);
+      padding-bottom: 0.7em;
+    }
+    
+    p, li {
+      font-size: 1.12rem;
+      margin-bottom: 1.4em;
+    }
+    
+    ul {
+      padding-left: 1.8em;
+      list-style: none;
+    }
+    
+    ul li {
+      position: relative;
+      margin-bottom: 1.1em;
+    }
+    
+    ul li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: -1.4em;
+      font-size: 1.9rem;
+      line-height: 1;
+    }
+    
+    .warning, .hope {
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin: 1.6em 0;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+    
+    .warning {
+      color: var(--red);
+      background-color: rgba(255, 107, 107, 0.1);
+      border-left: 4px solid var(--red);
+    }
+    
+    .hope {
+      color: var(--green);
+      background-color: rgba(81, 207, 102, 0.1);
+      border-left: 4px solid var(--green);
+    }
+    
+    .img-container {
+      margin: 2.5em 0;
+      text-align: center;
+    }
+    
+    .img-container img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.65);
+      border: 1px solid rgba(100,255,218,0.18);
+      transition: transform 0.3s ease;
+      background: linear-gradient(135deg, #1a3a6b, #2a4a8b);
+    }
+    
+    .img-container img:hover {
+      transform: scale(1.01);
+    }
+    
+    .img-container figcaption {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: rgba(230, 241, 255, 0.7);
+      font-style: italic;
+    }
+    
+    .image-placeholder {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, #1a3a6b, #2a4a8b);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(230, 241, 255, 0.5);
+      border: 2px dashed rgba(100, 255, 218, 0.3);
+    }
+    
+    .image-placeholder i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    
+    .conclusion {
+      background: linear-gradient(135deg, #112240, #0a192f);
+      padding: 70px 45px;
+      border-radius: 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    
+    .conclusion h2 { 
+      border: none; 
+    }
+    
+    .comments-section {
+      margin-top: 80px;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 45px 40px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.55);
+      border-left: 6px solid var(--accent);
+    }
+    
+    .comment-form {
+      margin-top: 30px;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(100, 255, 218, 0.2);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(100, 255, 218, 0.05);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .submit-btn:hover {
+      background: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(100, 255, 218, 0.3);
+    }
+    
+    .comment-list {
+      margin-top: 50px;
+    }
+    
+    .comment {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-left: 4px solid rgba(100, 255, 218, 0.3);
+    }
+    
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .comment-author {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+    
+    .comment-date {
+      color: rgba(230, 241, 255, 0.5);
+      font-size: 0.9rem;
+    }
+    
+    .comment-text {
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+    
+    .contact-section {
+      margin-top: 50px;
+      background: linear-gradient(135deg, #112240, #0a192f);
+      border-radius: 16px;
+      padding: 45px 40px;
+      text-align: center;
+      border: 2px solid rgba(100, 255, 218, 0.2);
+    }
+    
+    .contact-info {
+      margin-top: 30px;
+      font-size: 1.2rem;
+    }
+    
+    .email-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.3rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: rgba(100, 255, 218, 0.1);
+      display: inline-block;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .email-link:hover {
+      background: rgba(100, 255, 218, 0.2);
+      transform: translateY(-3px);
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent);
+      color: var(--bg);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.5rem;
+      box-shadow: 0 5px 20px rgba(100, 255, 218, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      background: white;
+    }
+    
+    @media (max-width: 768px) {
+      header { 
+        padding: 120px 20px 80px; 
+      }
+      h1 { 
+        font-size: 2.5rem; 
+      }
+      .subtitle { 
+        font-size: 1.2rem; 
+      }
+      section { 
+        padding: 30px 20px; 
+      }
+      .conclusion {
+        padding: 50px 25px;
+      }
+      .warning, .hope {
+        padding: 12px 15px;
+        font-size: 1.05rem;
+      }
+      .img-container img {
+        height: 300px;
+      }
+      .image-placeholder {
+        height: 300px;
+      }
+      .comments-section,
+      .contact-section {
+        padding: 30px 20px;
+      }
+      .contact-info {
+        font-size: 1.1rem;
+      }
+      .email-link {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 { 
+        font-size: 2rem; 
+      }
+      .container {
+        padding: 0 15px;
+      }
+      .img-container img {
+        height: 250px;
+      }
+      .image-placeholder {
+        height: 250px;
+      }
+      .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header role="banner">
+  <h1>Personal Responsibility<br>and Climate Change</h1>
+  <p class="subtitle">Can we, as individuals, truly influence the global process — or is it just an illusion?</p>
+</header>
+
+<main class="container" role="main">
+
+  <section aria-labelledby="section1">
+    <h2 id="section1">Personal Responsibility for Climate Change</h2>
+    <p>In this article, I would like to assess personal responsibility for climate change. Can we individually affect climate change, or is the process so global that our contribution will never be enough?</p>
+
+    <p>In today's industrial‑technological world, people must work to support themselves and their families. Almost every human job in modern reality negatively impacts the ecosystems around us. Many people choose to work in factories and enterprises that are responsible for the main environmental pollution. Our society cannot give up factories, fossil fuel combustion, deforestation, agriculture (especially livestock), industry and waste.</p>
+
+    <div class="img-container">
+      <img src="https://images.pexels.com/photos/3617467/pexels-photo-3617467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Large‑scale industrial complex with many chimneys and complex infrastructure" loading="lazy">
+      <figcaption>Modern industrial complexes — the engine of economy and the main source of CO₂ emissions</figcaption>
+    </div>
+
+    <div class="warning">
+      Factories seriously affect the environment through air pollution (CO₂, sulfur, heavy metals), water pollution (wastewater with chemicals), soil pollution (industrial waste, heavy metals) and excessive resource consumption (water, energy), causing acid rain, the greenhouse effect, ecosystem degradation, loss of biodiversity, smog and plastic accumulation. This leads to climate change, health problems for people and animals, and landscape destruction.
+    </div>
+  </section>
+
+  <section aria-labelledby="section2">
+    <h2 id="section2">The Car — Daily Contribution</h2>
+    <p>To get to work in factories, people use cars. Cars significantly pollute the environment by releasing greenhouse gases (CO₂), nitrogen oxides, sulfur oxides, carbon monoxide and particulate matter, which contributes to climate change and respiratory diseases. They also contaminate soil with heavy metals (lead, cadmium) and petroleum products, and create noise pollution, negatively affecting human health, flora and fauna, and destroying natural habitats.</p>
+
+    <div class="img-container">
+      <img src="https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Long urban traffic jams during rush hour" loading="lazy">
+      <figcaption>Daily traffic jams — a systemic problem of urban ecology</figcaption>
+    </div>
+
+    <p>In cities, road transport accounts for up to 90% of all pollutant emissions. One car can consume more oxygen than a human and emit hundreds of kilograms of harmful substances per year.</p>
+  </section>
+
+  <section aria-labelledby="section3">
+    <h2 id="section3">Consumption: Meat, Clothing, Transport</h2>
+    <p>The money earned in factories is spent on food (for example, buying meat in a supermarket), maybe on clothes, and ultimately… Livestock production has a negative impact on the environment, causing deforestation for pastures, air pollution with greenhouse gases (methane, ammonia) and PM2.5 particles, soil depletion and erosion, and water pollution with nitrates, phosphates and antibiotics, leading to algal blooms and loss of biodiversity. This industry is one of the largest sources of greenhouse gas emissions, comparable to emissions from all transport.</p>
+
+    <div class="img-container">
+      <img src="https://images.pexels.com/photos/2366275/pexels-photo-2366275.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Cattle on an industrial farm" loading="lazy">
+      <figcaption>Industrial livestock — a major source of methane emissions</figcaption>
+    </div>
+
+    <p>Clothing production greatly harms the environment, accounting for 10% of global CO₂ emissions, huge consumption of fresh water (up to 2700 litres per t‑shirt) and pollution of water bodies with toxic dyes (20% of industrial wastewater), as well as microplastics (half a million tons per year from synthetics) that enter the ocean and food chains. This is linked to fast fashion, overproduction and waste that takes hundreds of years to decompose.</p>
+
+    <div class="img-container">
+      <img src="https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Warehouse with huge amount of mass‑market clothing" loading="lazy">
+      <figcaption>Fast fashion leads to overproduction and environmental problems</figcaption>
+    </div>
+
+    <p>Food and clothing are now delivered from all over the world using the same types of transport.</p>
+  </section>
+
+  <section aria-labelledby="section4">
+    <h2 id="section4">Waste — The Final Point</h2>
+    <p>We also leave behind a significant amount of waste… Less than 20% of household waste is recycled worldwide, with 80–90% sent to landfills and 2–3% incinerated. There are strong regional differences, but overall recycling rates are low. For example, only about 9% of plastic is recycled, while leaders like Germany achieve 68% or more — but that is the exception, not the rule.</p>
+
+    <div class="img-container">
+      <img src="https://images.pexels.com/photos/128421/pexels-photo-128421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Giant mountains of plastic waste on a landfill, aerial view" loading="lazy">
+      <figcaption>Mountains of plastic waste — a vivid illustration of the single‑use consumption problem</figcaption>
+    </div>
+
+    <div class="warning">
+      So we — honest citizens — will of course separate and sort waste, and think about how great we are and how we help nature, but all these efforts are just a drop in the ocean. A psychological indulgence for our society and the individual. The desire to relieve oneself of responsibility using purely ritual actions that actually have no global significance and do not change the big picture.
+    </div>
+  </section>
+
+  <section aria-labelledby="section5">
+    <h2 id="section5">Can We Fix Anything?</h2>
+    <p>One might object: “So let’s try to fix it!” In factories and plants we will introduce gas cleaning technologies. Install filters, scrubbers, catalysts, modernise processes, optimise equipment (ventilation, sealing) and use safer materials, as well as automation and strict regulations to control and reduce pollution.</p>
+
+    <div class="warning">
+      In that case, we must understand that these measures will be expensive. The production of a filter itself is a blow to the environment. And they would need to be manufactured in incredible quantities to see any effect from their operation. Plus, we would have to find a way to dispose of old equipment, which cannot always be fully recycled. And also the carbon footprint left by transporting various materials.
+    </div>
+
+    <p>As for cars, many people are now replacing petrol cars with electric ones. However, electric car production leaves a large carbon footprint and uses rare‑earth metals. The biggest danger is the batteries, which cannot be fully recycled. Therefore, switching from a conventional car to an electric one solely for environmental protection is not worthwhile. It is better to buy an electric car only if your previous car has worn out.</p>
+
+    <p>We could also try to replace plastic with other materials. But alternative materials are more expensive, less reliable, and their production also leaves a carbon footprint. If replacing plastic were economically viable, it would already have been done. Research is ongoing, and attempts are being made to replace plastic with other materials.</p>
+
+    <div class="img-container">
+      <img src="https://images.pexels.com/photos/707344/pexels-photo-707344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Lonely polar bear on a small ice floe in the ocean" loading="lazy">
+      <figcaption>Polar animals are the first victims of climate change</figcaption>
+    </div>
+
+    <div class="warning">
+      As we can see, human activity in the modern industrial‑technological system is continuously linked to environmental pollution. A vicious circle is formed that cannot be broken. Modern society is a consumer society. We take more than we need. We produce huge amounts of waste, knowing that we could avoid such volumes.
+    </div>
+
+    <div class="warning">
+      Attempts to change something help on a small scale, but globally they will not change anything. If humanity spent money not on wars and arms production, but on timely problem solving, the outcome might be different. We have already passed the point of no return. Now any attempts to change things only buy a little more time until the complete collapse of all ecosystems, rising global temperatures and the extinction of all life. Many consider this perspective exaggerated, but all scientific assessments point to one thing — we are close to catastrophe!
+    </div>
+
+    <p>This is perfectly shown in the film “Don't Look Up”, where an asteroid flying toward Earth serves as an allegory for global warming. We stubbornly try not to notice it, to bury our heads in the sand, but that leads to disaster.</p>
+  </section>
+
+  <div class="conclusion" aria-labelledby="conclusion">
+    <h2 id="conclusion">So What Should We Do?</h2>
+    <p>In this situation, I think we should start with ourselves. Even if our efforts are globally useless, they can work on a small scale. These efforts will buy us time. When addressing such issues, we can turn to Kant's categorical imperative.</p>
+
+    <p>Kant's categorical imperative is the central principle of his ethics — an unconditional moral requirement that prescribes: “Act only according to that maxim whereby you can at the same time will that it should become a universal law.” He also states: “Act in such a way that you treat humanity, whether in your own person or in the person of any other, never merely as a means to an end, but always at the same time as an end.” This principle is an absolute and universal moral law that does not depend on personal desires or consequences, and requires respect for human dignity.</p>
+
+    <p>Imagine that everyone in the world acts as you do…</p>
+
+    <div class="hope">
+      That is why it is so important to take simple actions: reduce electricity use, switch to LED lighting and energy‑efficient appliances. Give up private cars in favour of public transport, cycling or walking where possible. Refuse single‑use plastics, reduce food waste and choose durable goods. Participate in climate initiatives and support politicians who promote the environmental agenda. Sort your waste.
+    </div>
+
+    <div class="img-container">
+      <img src="https://images.pexels.com/photos/9743370/pexels-photo-9743370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="People of different ages planting trees in a park — volunteer environmental action" loading="lazy">
+      <figcaption>Collective action — the path to real change in the environmental situation</figcaption>
+    </div>
+
+    <div class="hope">
+      We can also hope for the development of artificial intelligence, which can help develop new strategies and approaches to solving this problem. We must do everything in our power, because there may be hidden parameters — options and opportunities we have overlooked that could later greatly influence the course of events.
+    </div>
+
+    <div class="hope">
+      And one day, perhaps, the pendulum will swing the other way…
+    </div>
+  </div>
+
+  <!-- Comments Section -->
+  <section class="comments-section" aria-labelledby="comments-title">
+    <h2 id="comments-title">Article Discussion</h2>
+    <p>Share your opinion about the article. Do you think we, as individuals, have a real opportunity to influence climate change? What measures do you consider most effective?</p>
+    
+    <div class="comment-form">
+      <form id="commentForm">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" class="form-control" required placeholder="Your name">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email (optional)</label>
+          <input type="email" id="email" class="form-control" placeholder="email@example.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="comment">Comment *</label>
+          <textarea id="comment" class="form-control" required placeholder="Your thoughts about the article..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane"></i> Submit Comment
+        </button>
+      </form>
+    </div>
+    
+    <div class="comment-list" id="commentList">
+      <!-- Comments will be added here -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact the Author</h2>
+    <p>If you have questions, collaboration proposals or want to discuss the topic in more detail — write me an email:</p>
+    
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i></p>
+      <a href="mailto:alexnestalexnest@yandex.ru" class="email-link">
+        alexnestalexnest@yandex.ru
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Back to top button -->
+<a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Comment form handling
+    const commentForm = document.getElementById('commentForm');
+    const commentList = document.getElementById('commentList');
+    
+    if (commentForm) {
+      commentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value.trim();
+        const commentText = document.getElementById('comment').value.trim();
+        
+        if (!name || !commentText) {
+          alert('Please fill in the required fields: Name and Comment');
+          return;
+        }
+        
+        const newComment = document.createElement('div');
+        newComment.className = 'comment';
+        
+        const currentDate = new Date().toLocaleDateString('en-US', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        });
+        
+        newComment.innerHTML = `
+          <div class="comment-header">
+            <span class="comment-author">${name}</span>
+            <span class="comment-date">${currentDate}</span>
+          </div>
+          <div class="comment-text">${commentText}</div>
+        `;
+        
+        commentList.insertBefore(newComment, commentList.firstChild);
+        commentForm.reset();
+        alert('Thank you for your comment! It has been added to the discussion.');
+      });
+    }
+    
+    // Image error handling
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      img.addEventListener('error', function() {
+        console.log('Image load error:', this.src);
+        
+        const backupImages = {
+          'industry': 'https://images.pexels.com/photos/3617467/pexels-photo-3617467.jpeg',
+          'transport': 'https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg',
+          'livestock': 'https://images.pexels.com/photos/2366275/pexels-photo-2366275.jpeg',
+          'clothing': 'https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg',
+          'landfill': 'https://images.pexels.com/photos/128421/pexels-photo-128421.jpeg',
+          'climate': 'https://images.pexels.com/photos/707344/pexels-photo-707344.jpeg',
+          'solution': 'https://images.pexels.com/photos/9743370/pexels-photo-9743370.jpeg'
+        };
+        
+        const altText = this.alt.toLowerCase();
+        let backupUrl = '';
+        
+        if (altText.includes('industrial') || altText.includes('complex') || altText.includes('factory')) {
+          backupUrl = backupImages['industry'];
+        } else if (altText.includes('traffic') || altText.includes('car') || altText.includes('transport')) {
+          backupUrl = backupImages['transport'];
+        } else if (altText.includes('livestock') || altText.includes('cattle') || altText.includes('farm')) {
+          backupUrl = backupImages['livestock'];
+        } else if (altText.includes('clothing') || altText.includes('fashion') || altText.includes('warehouse')) {
+          backupUrl = backupImages['clothing'];
+        } else if (altText.includes('landfill') || altText.includes('waste') || altText.includes('plastic')) {
+          backupUrl = backupImages['landfill'];
+        } else if (altText.includes('polar') || altText.includes('bear') || altText.includes('climate')) {
+          backupUrl = backupImages['climate'];
+        } else if (altText.includes('planting') || altText.includes('volunteer') || altText.includes('action')) {
+          backupUrl = backupImages['solution'];
+        } else {
+          backupUrl = 'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg';
+        }
+        
+        if (backupUrl && backupUrl !== this.src) {
+          this.src = backupUrl;
+        } else {
+          this.style.display = 'none';
+          const placeholder = document.createElement('div');
+          placeholder.className = 'image-placeholder';
+          placeholder.innerHTML = `
+            <i class="fas fa-leaf"></i>
+            <span>${this.alt}</span>
+            <small>Environment related image</small>
+          `;
+          this.parentElement.appendChild(placeholder);
+        }
+      });
+      
+      img.addEventListener('load', function() {
+        this.style.opacity = '1';
+      });
+      
+      img.style.opacity = '0';
+      img.style.transition = 'opacity 0.3s ease';
+    });
+  });
+</script>
+
+</body>
+</html>
